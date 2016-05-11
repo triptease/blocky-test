@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var connect = require('gulp-connect');
 var less = require('gulp-less');
-var babelify = require("babelify");
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
@@ -12,8 +11,11 @@ gulp.task("build", function () {
     return browserify({
         entries: ['app/javascript/grid.js']
     })
-    .on('error', function(err) { console.error(err); this.emit('end'); })
-    .transform('babelify', {presets: ["es2015"]})
+    .on('error', function(err) {
+        console.error(err);
+        this.emit('end');
+    })
+    .transform('babelify', {presets: ['es2015']})
     .bundle()
     .pipe(source('grid.js'))
     .pipe(buffer())
@@ -24,8 +26,11 @@ gulp.task("buildtests", function () {
     browserify({
         entries: ['test/tests.js']
     })
-    .on('error', function(err) { console.error(err); this.emit('end'); })
-    .transform('babelify', {presets: ["es2015"]})
+    .on('error', function(err) {
+        console.error(err);
+        this.emit('end');
+    })
+    .transform('babelify', {presets: ['es2015']})
     .bundle()
     .pipe(source('tests.js'))
     .pipe(buffer())

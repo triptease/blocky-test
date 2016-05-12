@@ -24,7 +24,7 @@ gulp.task("build", function () {
 
 gulp.task("buildtests", function () {
     browserify({
-        entries: ['test/tests.js']
+        entries: ['test/tests.js', 'test/fixtures.js', 'test/fixtures2.js', 'test/fixtures3.js']
     })
     .on('error', function(err) {
         console.error(err);

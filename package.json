@@ -1,7 +1,7 @@
 {
   "name": "front-end-dev-test",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "A blocky puzzle for software engineers.",
   "main": "index.js",
   "scripts": {
     "start": "gulp",
@@ -20,5 +20,6 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
-  }
+  },
+  "license": "UNLICENSED"
 }

@@ -1,10 +1,12 @@
+# Blocky Puzzle
+
 ## To get started
 
 ```sh
-yarn
-# or npm i
-yarn start
-# or npm start
+npm i
+# or yarn
+npm start
+# or yarn start
 ```
 
 `http://localhost:9100/` will open automatically on the blocky app, live-reloading as you develop.

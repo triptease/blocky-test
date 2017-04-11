@@ -1,14 +1,21 @@
-#### To get started
+# Blocky Puzzle
 
+## To get started
+
+```sh
+npm i
+# or yarn
+npm start
+# or yarn start
 ```
-$ npm i
-$ npm start
-$ open http://localhost:9100/
-```
 
-#### Task:
+`http://localhost:9100/` will open automatically on the blocky app, live-reloading as you develop.
 
-Implement blockClicked to remove (or hide) all blocks of the same colour that are connected to the target element then allow the blocks above the removed to fall down (similar to Tetris but you should click a block to have connected blocks removed).
+`yarn test` & `yarn test:watch` to run the unit tests on the terminal.
+
+## Task
+
+Implement `blockClicked` to remove (or hide) all blocks of the same colour that are connected to the target element, then allow the blocks above the removed to "fall down" (similar to Tetris but you should click a block to have connected blocks removed).
 
 E.g.,
 

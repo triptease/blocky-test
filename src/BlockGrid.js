@@ -1,22 +1,14 @@
-export const COLOURS = ['red', 'green', 'blue', 'yellow'];
-const MAX_X = 10;
-const MAX_Y = 10;
+import Block from './Block';
 
-export class Block {
-  constructor(x, y) {
-    this.x = x;
-    this.y = y;
-    this.colour = COLOURS[Math.floor(Math.random() * COLOURS.length)];
-  }
-}
-
-export class BlockGrid {
-  constructor() {
+class BlockGrid {
+  constructor(width = 10, height = 10) {
+    this.width = width;
+    this.height = height;
     this.grid = [];
 
-    for (let x = 0; x < MAX_X; x++) {
+    for (let x = 0; x < this.width; x++) {
       let col = [];
-      for (let y = 0; y < MAX_Y; y++) {
+      for (let y = 0; y < this.height; y++) {
         col.push(new Block(x, y));
       }
 
@@ -27,14 +19,14 @@ export class BlockGrid {
   }
 
   render(el = document.querySelector('#gridEl')) {
-    for (let x = 0; x < MAX_X; x++) {
+    for (let x = 0; x < this.width; x++) {
       let id = 'col_' + x;
       let colEl = document.createElement('div');
       colEl.className = 'col';
       colEl.id = id;
       el.appendChild(colEl);
 
-      for (let y = MAX_Y - 1; y >= 0; y--) {
+      for (let y = this.height - 1; y >= 0; y--) {
         let block = this.grid[x][y],
           id = `block_${x}x${y}`,
           blockEl = document.createElement('div');
@@ -55,4 +47,4 @@ export class BlockGrid {
   }
 }
 
-window.addEventListener('DOMContentLoaded', () => new BlockGrid().render());
+export default BlockGrid;

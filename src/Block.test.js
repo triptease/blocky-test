@@ -1,4 +1,4 @@
-import { Block, COLOURS } from './grid';
+import Block, { COLOURS } from './Block';
 import { assert } from 'chai';
 
 describe('Block', () => {
@@ -12,8 +12,4 @@ describe('Block', () => {
       assert.ok(COLOURS.indexOf(block.colour) > -1, 'colour is valid');
     });
   });
-});
-
-describe('BlockGrid', () => {
-  xit('should be implemented!', () => {});
 });

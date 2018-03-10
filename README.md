@@ -3,27 +3,26 @@
 ## To get started
 
 ```sh
-npm i
-# or yarn
-npm start
-# or yarn start
+yarn
+# or `npm install`
+yarn start
+# or `npm start`
 ```
 
 `http://localhost:9100/` will open automatically on the blocky app, live-reloading as you develop.
 
-`yarn test` & `yarn test:watch` to run the unit tests on the terminal.
+Use `yarn test` to run the unit tests on the terminal. `yarn test --watch` will only run test files relevant to changes since your last commit, and rerun them every time you save.
 
 ## Task
 
-Implement `blockClicked` to remove (or hide) all blocks of the same colour that are connected to the target element, then allow the blocks above the removed to "fall down" (similar to Tetris but you should click a block to have connected blocks removed).
+Clicking on a block should remove (or hide) itself and all blocks of the same colour that are connected to the target element, then allow the blocks above the removed to "fall down". The "gravity" is similar to [Tetris][], but every block is its own 1x1 entity. Unlike Tetris, it's clicking on a block that triggers the removal and fall of blocks.
 
-E.g.,
+For example, given:
 
-Given:
+![Initial state](./initial.jpg)
 
-![Initial state](https://trottski.s3.amazonaws.com/snaps/initial.jpg)
+After clicking one of the bottom right blue boxes, it should look like this:
 
-After clicking one of the bottom right blue boxes it should then look
-like this:
+![state 2](./expectedResult.jpg)
 
-![state 2](https://trottski.s3.amazonaws.com/snaps/stage2.jpg)
+[tetris]: https://en.wikipedia.org/wiki/Tetris "You've played Tetris, right?"

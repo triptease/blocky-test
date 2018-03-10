@@ -8,7 +8,7 @@
     "start": "webpack-dev-server --open",
     "test": "mocha --require babel-polyfill --compilers js:babel-register,jsdom-global/register 'app/**/*.test.js'",
     "test:watch": "yarn test -- --watch",
-    "prettier": "prettier --single-quote --write 'app/**/*.js'"
+    "prettier": "prettier --write 'app/**/*.{css,js}'"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
@@ -23,7 +23,7 @@
     "jsdom-global": "^2.1.1",
     "less": "^2.7.2",
     "mocha": "^3.2.0",
-    "prettier": "^0.22.0",
+    "prettier": "^1.1.0",
     "style-loader": "^0.16.1",
     "webpack": "^2.3.3",
     "webpack-dev-server": "^2.4.2"

@@ -18,7 +18,7 @@ class BlockGrid {
     return this;
   }
 
-  render(el = document.querySelector('#gridEl')) {
+  render(el = document.getElementById('gridEl')) {
     for (let x = 0; x < this.width; x++) {
       let id = 'col_' + x;
       let colEl = document.createElement('div');

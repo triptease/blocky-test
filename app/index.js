@@ -1,2 +1,2 @@
-import './less/main.less';
+import './index.css';
 import './javascript/grid';

@@ -7,7 +7,7 @@ class BlockGrid {
     this.grid = [];
 
     for (let x = 0; x < this.width; x++) {
-      let col = [];
+      const col = [];
       for (let y = 0; y < this.height; y++) {
         col.push(new Block(x, y));
       }
@@ -18,16 +18,16 @@ class BlockGrid {
 
   render(el = document.getElementById('gridEl')) {
     for (let x = 0; x < this.width; x++) {
-      let id = 'col_' + x;
-      let colEl = document.createElement('div');
-      colEl.className = 'col';
+      const id = 'col_' + x;
+      const colEl = document.createElement('div');
       colEl.id = id;
+      colEl.className = 'col';
       el.appendChild(colEl);
 
       for (let y = this.height - 1; y >= 0; y--) {
-        let block = this.grid[x][y],
-          id = `block_${x}x${y}`,
-          blockEl = document.createElement('div');
+        const block = this.grid[x][y];
+        const id = `block_${x}x${y}`;
+        const blockEl = document.createElement('div');
 
         blockEl.id = id;
         blockEl.className = 'block';

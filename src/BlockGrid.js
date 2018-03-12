@@ -14,8 +14,6 @@ class BlockGrid {
 
       this.grid.push(col);
     }
-
-    return this;
   }
 
   render(el = document.getElementById('gridEl')) {
@@ -38,8 +36,6 @@ class BlockGrid {
         colEl.appendChild(blockEl);
       }
     }
-
-    return this;
   }
 
   blockClicked(e, block) {

@@ -5,10 +5,14 @@ class Block {
   public y: number;
   public colour: string;
 
-  constructor(x: number, y: number) {
+  constructor(
+    x: number,
+    y: number,
+    colour = COLOURS[Math.floor(Math.random() * COLOURS.length)]
+  ) {
     this.x = x;
     this.y = y;
-    this.colour = COLOURS[Math.floor(Math.random() * COLOURS.length)];
+    this.colour = colour;
   }
 }
 

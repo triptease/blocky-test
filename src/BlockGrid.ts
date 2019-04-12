@@ -3,7 +3,7 @@ import Block from './Block';
 class BlockGrid {
   private width: number;
   private height: number;
-  private grid: Block[][];
+  public grid: Block[][];
 
   constructor(width = 10, height = 10) {
     this.width = width;

@@ -1,27 +1,19 @@
 {
   "name": "blocky-test",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "A blocky puzzle for software engineers.",
-  "main": "src/index.js",
+  "main": "src/index.ts",
   "scripts": {
-    "build": "webpack --mode=production",
-    "start": "webpack-dev-server --mode=development --open",
+    "start": "parcel public/index.html --port 9100",
+    "build": "parcel build public/index.html",
     "test": "jest",
-    "format": "prettier --write 'app/**/*.{css,js}'"
+    "format": "prettier --write 'app/**/*.{css,js,ts}'"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-jest": "^22.4.1",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
-    "css-loader": "^0.28.10",
-    "jest": "^22.4.2",
-    "prettier": "^1.1.0",
-    "regenerator-runtime": "^0.11.1",
-    "style-loader": "^0.20.3",
-    "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.11",
-    "webpack-dev-server": "^3.1.1"
+    "jest": "^24.7.1",
+    "parcel-bundler": "^1.12.3",
+    "prettier": "^1.16.4",
+    "typescript": "^3.4.3"
   },
   "license": "UNLICENSED"
 }

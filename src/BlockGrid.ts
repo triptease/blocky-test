@@ -1,6 +1,10 @@
 import Block from './Block';
 
 class BlockGrid {
+  private width: number;
+  private height: number;
+  private grid: Block[][];
+
   constructor(width = 10, height = 10) {
     this.width = width;
     this.height = height;
@@ -32,13 +36,15 @@ class BlockGrid {
         blockEl.id = id;
         blockEl.className = 'block';
         blockEl.style.background = block.colour;
-        blockEl.addEventListener('click', evt => this.blockClicked(evt, block));
+        blockEl.addEventListener('click', (evt) =>
+          this.blockClicked(evt, block)
+        );
         colEl.appendChild(blockEl);
       }
     }
   }
 
-  blockClicked(e, block) {
+  blockClicked(e: MouseEvent, block: Block) {
     console.log(e, block);
   }
 }

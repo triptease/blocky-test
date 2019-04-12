@@ -2,9 +2,9 @@
 
 ## To get started
 
-You will need a recent version of [Node]. If you do not have it installed already, we find [nvm] to be a handy script to install and even juggle between versions of Node without too much hassle.
+You will need a recent version of [Node]. If you do not have it installed already, we find [nvm] to be a handy script to install and even juggle between versions of Node without hassle.
 
-On most projects, we have transitioned into using [Yarn], Facebook's package manager in favour of npm. Either one will do to install and run this project, as well as run its tests.
+On most projects, we have transitioned into using [Yarn], Facebook's package manager, in favour of npm. Either one will do to install and run this project, as well as run its tests.
 
 ```sh
 yarn
@@ -29,7 +29,12 @@ After clicking one of the bottom right blue boxes, it should look like this:
 
 ![state 2](./expectedResult.jpg)
 
+## Note
+
+Since most of our new projects do use [Typescript] over vanilla javascript, this repo does as well. _You_ are not required to know Typescript to complete your task, so feel free to ignore typings or use `any` liberally. If you _are_ comfortable with Typescript, feel free to leverage it to your advantage.
+
 [node]: https://nodejs.org/en/ "Node is a JavaScript runtime built on Chrome's V8 JavaScript engine"
 [nvm]: https://github.com/creationix/nvm 'Because nobody wants to upgrade and downgrade Node per project'
 [yarn]: https://yarnpkg.com/en/docs/install 'Never go full Facebook though'
 [tetris]: https://en.wikipedia.org/wiki/Tetris "You've played Tetris, right?"
+[typescript]: https://www.typescriptlang.org 'So hot right now'

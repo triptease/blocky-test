@@ -7,7 +7,7 @@
     "start": "parcel public/index.html --port 9100",
     "build": "parcel build public/index.html",
     "test": "jest",
-    "format": "prettier --write 'app/**/*.{css,js,ts}'"
+    "format": "prettier --write 'src/**/*.{css,js,ts}'"
   },
   "devDependencies": {
     "jest": "^24.7.1",

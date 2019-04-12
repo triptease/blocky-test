@@ -7,10 +7,10 @@ describe('BlockGrid', () => {
 
     expect(grid.length).toBe(10);
 
-    grid.forEach(column => {
+    grid.forEach((column) => {
       expect(column.length).toBe(10);
 
-      column.forEach(block => {
+      column.forEach((block) => {
         expect(block).toBeInstanceOf(Block);
       });
     });
@@ -19,7 +19,7 @@ describe('BlockGrid', () => {
 
     expect(gridB.length).toBe(3);
 
-    gridB.forEach(column => {
+    gridB.forEach((column) => {
       expect(column.length).toBe(5);
     });
   });

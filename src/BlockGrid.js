@@ -50,6 +50,14 @@ class BlockGrid {
     }
   }
 
+  /**
+   * Marks the clicked block and all same colored blocks connectted horizontally or vertically
+   * @param x {int} row value
+   * @param y {int} column value
+   * @param {string} colour
+   * @param {Array} matchedCoordinates
+   * @returns {BlockGrid}
+   */
   removeConnectedBlocks(x, y, colour, matchedCoordinates = []) {
     let directions = [
       [1, 0],
@@ -91,6 +99,11 @@ class BlockGrid {
     return this;
   }
 
+  /**
+   * Shift down all non null blocks in a column
+   * @param matchedCoordinates {Array} Array of co-ordinates that have the same color as the clicked block
+   * @returns {BlockGrid}
+   */
   shiftBlocksDownward(matchedCoordinates) {
     matchedCoordinates.forEach(elem => {
       let x = elem[0];
@@ -107,6 +120,10 @@ class BlockGrid {
     return this;
   }
 
+  /**
+   * Remove the current grid from the div so that render can refresh changes
+   * @returns {BlockGrid}
+   */
   resetGrid() {
     document.getElementById('gridEl').innerHTML = '';
     return this;

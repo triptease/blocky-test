@@ -40,6 +40,76 @@ class BlockGrid {
 
   blockClicked(e, block) {
     console.log(e, block);
+    const { x, y, colour } = block;
+    if (colour !== null) {
+      let matchedCoordinates = [];
+      this.removeConnectedBlocks(x, y, colour, matchedCoordinates)
+        .shiftBlocksDownward(matchedCoordinates)
+        .resetGrid()
+        .render();
+    }
+  }
+
+  removeConnectedBlocks(x, y, colour, matchedCoordinates = []) {
+    let directions = [
+      [1, 0],
+      [-1, 0],
+      [0, 1],
+      [0, -1],
+    ];
+
+    let visited = new Set();
+    let stack = [];
+    stack.push([x, y]);
+
+    while (stack.length > 0) {
+      let [row, col] = stack.pop();
+      if (
+        row < 0 ||
+        col < 0 ||
+        row >= this.width ||
+        col >= this.height ||
+        visited.has([row, col])
+      ) {
+        continue;
+      }
+      visited.add([row, col]);
+
+      if (
+        this.grid[row] &&
+        this.grid[row][col] &&
+        this.grid[row][col].colour === colour
+      ) {
+        this.grid[row][col].colour = null;
+        matchedCoordinates.push([row, col]);
+
+        directions.forEach(([x_offset, y_offset]) => {
+          stack.push([row + x_offset, col + y_offset]);
+        });
+      }
+    }
+    return this;
+  }
+
+  shiftBlocksDownward(matchedCoordinates) {
+    matchedCoordinates.forEach(elem => {
+      let x = elem[0];
+      for (let y = this.height - 1; y >= 0; y--) {
+        let curr = y;
+
+        while (this.grid[x][curr].colour === null && this.grid[x][curr + 1]) {
+          this.grid[x][curr].colour = this.grid[x][curr + 1].colour;
+          this.grid[x][curr + 1].colour = null;
+          curr++;
+        }
+      }
+    });
+    return this;
+  }
+
+  resetGrid() {
+    document.getElementById('gridEl').innerHTML = '';
+    return this;
   }
 }
 
